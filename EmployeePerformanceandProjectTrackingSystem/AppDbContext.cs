@@ -7,6 +7,10 @@ public class AppDbContext : DbContext
     public DbSet<EmployeeProject> EmployeeProjects { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder options)
         => options.UseSqlServer("Server=.;Database=EmployeeDB;Trusted_Connection=True;TrustServerCertificate=True;");
+     public AppDbContext()
+    {
+    }
+     
      // Constructor to accept DbContextOptions */
       public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
